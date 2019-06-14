@@ -3,7 +3,7 @@
 - The Get Api Route wasn't working for me so I used a different Api to fetch the lucky number, it has similar results. It gets a random number from 1 to 1000, you can find it in the saga.js file.
 - I added basic validation using redux forms
 - the state is passed via redux and I'm using redux saga middleware for async functions.
-- I add the proptypes to each value.
+- I added the proptypes to each value.
 - As well as render each component separately.
 
 

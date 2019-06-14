@@ -16,16 +16,12 @@ import Button from '@material-ui/core/Button';
 import * as actions from '../../containers/actions'
 import {required, minLength} from './Validate_2';
 import { RFTextField } from 'components/ReduxFormFields/RFTextField';
-import SayHi from './SayHi';
+import LuckyNumber from '../../containers/LuckyNumber/LuckyNumber';
 
 class WelcomeForm extends Component {
 
   state = {
-    show: false,
-    firstName: '',
-    lastName: '',
-    userName: '',
-    luckyNumber: -1
+    show: false
   };
 
   fetchNums = (v) => {
@@ -37,15 +33,10 @@ class WelcomeForm extends Component {
     this.fetchNums(num)
 
     this.setState({
-      show: true,
-      firstName: this.props.firstName,
-      lastName: this.props.lastName,
-      userName: this.props.userName,
-      luckyNumber: this.props.luckyNumber
+      show: true
     });
   };
     
-
   handleFirstName = (e) => {
     return this.props.actions.firstNameValue({
       firstName: e.target.value
@@ -64,14 +55,9 @@ class WelcomeForm extends Component {
   
   renderResults = () => {
     return (
-      <SayHi
-      firstName={this.state.firstName} 
-      lastName={this.state.lastName}
-      luckyNumber={this.props.luckyNumber}
-       />
+      <LuckyNumber />
     )
   };
-  
 
   render() {
     const {handleSubmit} = this.props;
@@ -127,16 +113,6 @@ WelcomeForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired
 };
 
-const mapStateToProps = state => {
-  return {
-    userName: state._root.entries[2][1].userName,
-    firstName: state._root.entries[2][1].firstName,
-    lastName: state._root.entries[2][1].lastName,
-    luckyNumber: state._root.entries[2][1].luckyNumber
-  
-  }
-};
-
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(actions, dispatch)
 });
@@ -145,5 +121,5 @@ export default compose(
   reduxForm({
     form: 'welcome'
   }),
-  connect(mapStateToProps, mapDispatchToProps)
+  connect(null, mapDispatchToProps)
 )(WelcomeForm);

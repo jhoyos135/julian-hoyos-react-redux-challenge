@@ -10,18 +10,27 @@ import PropTypes from 'prop-types';
 
 class LuckyNumberDisplay extends React.PureComponent {
   render() {
-    // TODO: Receive props passed down from LuckyNumber container
-    // const { } = this.props;
+    const { firstName, lastName, luckyNumber } = this.props;
+    const styles = {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      textAlign: 'center'
+    };
 
     return (
-      <div className="mt5 pa4 center w-25 bg-light-gray">
-        {/* TODO: Display the user's full name and their lucky number */}
+      <div style={styles} className="mt5 pa4 center bg-light-gray">
+      <p>
+         <span> Hello, {firstName.firstName} </span> <span>  {lastName.lastName} </span> !
+        </p>
+        <p>your Lucky number is</p>
+        <p> { luckyNumber } </p>
       </div>
     );
   }
 }
 
-// TODO: Add PropTypes
 LuckyNumberDisplay.propTypes = {
 
 };

@@ -25,12 +25,11 @@ class WelcomeForm extends Component {
   };
 
   fetchNums = (v) => {
-    this.props.actions.fetchLuckyNumber(v)
+    this.props.actions.fetchLuckyNumber()
   };
 
   submit(){
-    const num = this.state.userName;
-    this.fetchNums(num)
+    this.fetchNums()
 
     this.setState({
       show: true

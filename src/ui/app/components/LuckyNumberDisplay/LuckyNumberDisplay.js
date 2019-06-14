@@ -22,17 +22,23 @@ class LuckyNumberDisplay extends React.PureComponent {
     return (
       <div style={styles} className="mt5 pa4 center bg-light-gray">
       <p>
-         <span> Hello, {firstName.firstName} </span> <span>  {lastName.lastName} </span> !
+         <span> Hello, {firstName} </span> <span>  {lastName} </span> !
         </p>
         <p>your Lucky number is</p>
+        {
+          luckyNumber === undefined ? 
+          <p>finding your lucky number </p> :
         <p> { luckyNumber } </p>
+        }
       </div>
     );
   }
 }
 
 LuckyNumberDisplay.propTypes = {
-
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+  luckyNumber: PropTypes.number
 };
 
 export default LuckyNumberDisplay;

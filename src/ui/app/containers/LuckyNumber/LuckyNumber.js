@@ -28,9 +28,9 @@ class LuckyNumber extends React.PureComponent {
 
 const mapStateToProps = state => {
   return {
-    userName: state._root.entries[2][1].userName,
-    firstName: state._root.entries[2][1].firstName,
-    lastName: state._root.entries[2][1].lastName,
+    userName: state._root.entries[2][1].userName.userName,
+    firstName: state._root.entries[2][1].firstName.firstName,
+    lastName: state._root.entries[2][1].lastName.lastName,
     luckyNumber: state._root.entries[2][1].luckyNumber
   }
 };

@@ -14,17 +14,15 @@ import {fetchLuckyNumber, firstNameValue, lastNameValue, userNameValue} from './
 import { DISPATCH_ACTIONS } from './constants';
 import request from 'superagent';
 
-/*
-// The Api wasn't working for me so I used a different api, it has similar results, you get a random number every time the input changes so technically is a random number from 1000
-*/
 const fetchNumber = () => {
     const requestUrl = `https://www.random.org/integers/?num=1&min=1&max=1000&col=1&base=10&format=plain&rnd=new`;
     return request.get(requestUrl).then((data) => {
       return JSON.parse(data.text);
     })
-}
+};
+
 let finish = true;
-function* getLuckyNumber({userName}) {
+function* getLuckyNumber() {
   const result = yield call(fetchNumber);
   try {
       if(finish) {

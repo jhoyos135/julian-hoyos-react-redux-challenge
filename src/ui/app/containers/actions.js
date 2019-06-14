@@ -6,11 +6,27 @@
 
 import { DISPATCH_ACTIONS } from './constants';
 
-export function getLuckyNumber(username) {
+export const fetchLuckyNumber = (luckyNumber) => {
   return {
     type: DISPATCH_ACTIONS.GET_LUCKY_NUMBER,
-    username
+    luckyNumber: luckyNumber
   };
 }
-
-// TODO: Add more actions if needed
+export const firstNameValue = (firstname) => {
+  return {
+    type: DISPATCH_ACTIONS.GET_FIRST_NAME,
+    firstName: firstname
+  };
+}
+export const lastNameValue = (lastname) => {
+  return {
+    type: DISPATCH_ACTIONS.GET_LAST_NAME,
+    lastName: lastname
+  };
+}
+export const userNameValue = (username) => {
+  return {
+    type: DISPATCH_ACTIONS.GET_USER_NAME,
+    userName: username
+  };
+}

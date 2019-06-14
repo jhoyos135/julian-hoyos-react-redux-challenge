@@ -12,18 +12,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 
-export const RFTextField = ({
-  input,
-  label,
-  meta: { touched, error },
-  ...custom
-}) => (
-  <TextField
-    label={label}
-    error={touched && error}
-    {...input}
-    {...custom}
-  />
+export const RFTextField = ({ custom, value, input, label, type, meta: { touched, error, warning } }) => (
+  <div>
+    <div>
+      <TextField
+      {...custom}
+      {...input} 
+      type={type} 
+      autoComplete='off'
+      label={label}
+      value={value}
+      className='center'/>
+      <p className='red'>
+      {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+      </p>
+    </div>
+  </div>
+  
 );
 
 RFTextField.propTypes = {

@@ -6,7 +6,7 @@
  * a service call, and then show the LuckyNumber container.
  */
 
-import React from 'react';
+import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import PropTypes from 'prop-types';
@@ -21,12 +21,7 @@ import { CONTAINER_KEY } from '../constants';
 import saga from '../saga';
 import reducer from '../reducer';
 
-class Welcome extends React.PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.submit = this.submit.bind(this);
-  }
+class Welcome extends Component {
 
   /**
    * This function is invoked when the Redux Form is submitted.
@@ -34,13 +29,6 @@ class Welcome extends React.PureComponent {
    * @see https://redux-form.com/7.4.2/docs/gettingstarted.md/#step-4-of-4-reacting-to-submit
    * @param {*} values An immutable map of the Redux Form values
    */
-  submit(values) {
-    const { dispatch } = this.props;
-
-    // TODO: Get the form values and invoke the service layer
-
-    dispatch(???);
-  }
 
   render() {
     return (
@@ -49,8 +37,8 @@ class Welcome extends React.PureComponent {
           <title>Welcome</title>
         </Helmet>
 
-        <div className="mt5 pa4 center w-25 bg-light-gray">
-          <WelcomeForm onSubmit={???} />
+        <div className="mt5 pa4 center w-50 bg-light-gray">
+          <WelcomeForm/>
         </div>
       </article>
     );

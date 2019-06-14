@@ -31,31 +31,31 @@ function* getLuckyNumber({userName}) {
         yield put(fetchLuckyNumber(result));
     }
   } catch (err) {
-    console.log(err)
+    console.log(err);
   } finally {
-    finish = false
+    finish = false;
   }
 };
 
 function* getFirstName() {
   try {
-    yield* takeEvery(firstNameValue)
+    yield* takeEvery(firstNameValue);
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 };
 function* getLastName() {
   try {
-    yield* takeEvery(lastNameValue)
+    yield* takeEvery(lastNameValue);
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 };
 function* getUserName() {
   try {
-    yield* takeEvery(userNameValue)
+    yield* takeEvery(userNameValue);
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 };
 

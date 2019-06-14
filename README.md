@@ -1,3 +1,10 @@
+# Notes
+
+- The Api wasn't working for me so I used a different api, it has similar results, you get a random number every time the input changes so technically is a random number from 1000, you can find it in the saga.js file
+- I added basic validation using redux forms
+- the state is passed via redux and I'm using redux saga middleware for async functions
+
+
 # React Code Challenge
 
 Welcome to the React code challenge! This project will test your knowledge of React, Redux, and a few other related libraries. The submission of this project can be used prior to or as a supplement to an interview. This challenge was designed to be tough! Don't worry if you can't figure it out totally. In an interview, talking intelligently about the areas you were stuck is just as important. Good luck!

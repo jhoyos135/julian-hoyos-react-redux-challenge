@@ -30,7 +30,7 @@ class WelcomeForm extends Component {
 
   fetchNums = (v) => {
     this.props.actions.fetchLuckyNumber(v)
-  }
+  };
 
   submit(){
     const num = this.state.userName;
@@ -43,7 +43,7 @@ class WelcomeForm extends Component {
       userName: this.props.userName,
       luckyNumber: this.props.luckyNumber
     });
-    };
+  };
     
 
   handleFirstName = (e) => {
@@ -62,7 +62,7 @@ class WelcomeForm extends Component {
     })
   };
   
-  renderHi = () => {
+  renderResults = () => {
     return (
       <SayHi
       firstName={this.state.firstName} 
@@ -70,7 +70,7 @@ class WelcomeForm extends Component {
       luckyNumber={this.props.luckyNumber}
        />
     )
-  }
+  };
   
 
   render() {
@@ -114,9 +114,9 @@ class WelcomeForm extends Component {
       </form>)  
 }
 {this.state.show &&
-  <Fragment>
-   { this.renderHi()}
-  </Fragment>
+        <Fragment>
+        { this.renderResults()}
+        </Fragment>
 }
       </Fragment>
     );
@@ -132,7 +132,7 @@ const mapStateToProps = state => {
     userName: state._root.entries[2][1].userName,
     firstName: state._root.entries[2][1].firstName,
     lastName: state._root.entries[2][1].lastName,
-    luckyNumber: state._root.entries[2][1].luckyNumber,
+    luckyNumber: state._root.entries[2][1].luckyNumber
   
   }
 };
